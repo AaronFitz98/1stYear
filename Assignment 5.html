@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>		
+<script>
+	var add1 = (function () {
+		var counter1 = 0;
+		return function () {return counter1 += 1;}
+	})();
+	var add2 = (function () {
+		var counter2 = 0;
+		return function () {return counter2 += 1;}
+	})();
+	var add3 = (function () {
+		var counter3 = 0;
+		return function () {return counter3 += 1;}
+	})();
+	var add4 = (function () {
+		var counter4 = 0;
+		return function () {return counter4 += 1;}
+	})();
+
+	function clickcount(){
+    document.getElementById("var1").innerHTML = add1();
+}
+	function dclickcount(){
+    document.getElementById("var2").innerHTML = add2();
+}
+	function mouseov(){
+    document.getElementById("var3").innerHTML = add3();
+}
+	function mouseout(){
+    document.getElementById("var4").innerHTML = add4();
+}
+</script>
+</head>
+
+<body>
+<p style="text-align:center"><img src="https://www.jobsexpo.ie/wp-content/uploads/2016/12/NUI-Galway-JE.png" id="image" onclick="clickcount();" ondblclick="dclickcount();" onmouseover="mouseov();" onmouseout="mouseout();"></p>
+<p style="text-align:center">The image has been clicked <span id="var1">0</span> Times</p>
+<p style="text-align:center">The image has been double clicked <span id="var2">0</span> Times</p>	
+<p style="text-align:center">The mouse has moved onto the image <span id="var3">0</span> Times</p>
+<p style="text-align:center">The mouse has moved off of the image <span id="var4">0</span> Times</p>
+</body>
+</html>
